@@ -1,0 +1,22 @@
+section#contact-info {
+	font: .8em;
+}
+
+section.job {
+	background-color: #e9e5dc;
+	padding: 10px;
+	border-radius: 10px;
+	margin-top: 10px;
+}
+
+section.list {
+	font: .8em;
+}
+
+section.job:hover {
+    background-color: blue;
+}
+
+.list > li.featured {
+	color: green
+}
