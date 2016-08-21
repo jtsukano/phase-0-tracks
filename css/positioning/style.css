@@ -1,0 +1,28 @@
+body {
+	width: 1800px;
+	height: 900px;
+	position: relative;
+}
+
+img {
+	display: inline-block;
+	width: 200px;
+	position: absolute;
+}
+
+#octopus {
+	top: 100px;
+	left: 850px	;
+	z-index: -1;
+}
+
+#hat {
+	top: 40px;
+	left: 860px;
+}
+
+#glasses {
+	top: 180px;
+	left: 855px;
+}
+
