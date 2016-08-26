@@ -1,0 +1,25 @@
+Release 0
+- Approach elevator and press the up botton
+    - If going down, press the down botton instead
+- Proceed into the elevator.
+- If going up, press a number button higher than the floor you are on.
+    - Or else press the botton lower than the floor you are on. 
+- When the door opens at your floor, exit the elevator.
+
+Release 1 (Task: Making instant ramen)
+- Take pot out of the cabinet.
+- Add 450ml of water.
+- Put pot on top of stove.
+- Turn stove on.
+- Wait until water boils
+- Open instant ramen pack.
+- Take out ramen noodle
+- Place ramen noodle in the pot of boiling water.
+- Time 3 minutes using an alarm.
+    - Once 3 minutes passes, the alarm rings.
+- Take out the sauce packet from the ramen pack.
+- Open up the sauce packet.
+- Pour sauce into pot with ramen.
+- Stir the noodles so the sauce is mixed fully.
+- Pour the noodles into a bowl
+- Bon apetite!
