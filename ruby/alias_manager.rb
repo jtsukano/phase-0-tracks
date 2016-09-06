@@ -36,26 +36,38 @@ def codename_maker
 alpha = "abcdefghijklmnopqrstuvwxyz".split('')
 vowels = ["a", "e", "i", "o", "u"]
 consonants = alpha - vowels
+old_name = []
+new_name = []
 
-puts "Please enter the name to change"
+puts "Please enter the name to change or enter quit"
 agent = gets.chomp
 
-
-agent = agent.downcase.reverse
-agent = agent.split('')
-agent.class
-agent.map! do |char|
-	if vowels.include?(char)
-		vowels.rotate(1)[vowels.index(char)]
-	elsif char == " "
-		char
-	else
-		consonants.rotate(1)[consonants.index(char)]
+if agent.downcase == "quit"
+	break;
+else
+	new_agent = agent.downcase.reverse
+	new_agent = agent.split('')
+	new_agent.class
+	new_agent.map! do |char|
+		if vowels.include?(char)
+			vowels.rotate(1)[vowels.index(char)]
+		elsif char == " "
+			char
+		else
+			consonants.rotate(1)[consonants.index(char)]
+		end
 	end
+	new_agent
+	new_agent = new_agent.join('')
+	new_agent = new_agent.split.map(&:capitalize).join(' ')
+	old_name.push(agent)
+	new_name.push(new_agent)
+	redo
 end
-agent
-agent = agent.join('')
-new_agent = agent.split.map(&:capitalize).join(' ')
 end
 
-# Prompt user to enter another name
+codename_maker
+.each {|names| puts "#{agent} is now #{new_agent}."}
+
+
+# push to hash where key is entered name and data is new name
