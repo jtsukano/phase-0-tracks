@@ -39,11 +39,14 @@ consonants = alpha - vowels
 old_name = []
 new_name = []
 
+x = true
+until x == false
 puts "Please enter the name to change or enter quit"
 agent = gets.chomp
 
 if agent.downcase == "quit"
-	break;
+	x = false
+	"good luck agent"
 else
 	new_agent = agent.downcase.reverse
 	new_agent = agent.split('')
@@ -62,7 +65,6 @@ else
 	new_agent = new_agent.split.map(&:capitalize).join(' ')
 	old_name.push(agent)
 	new_name.push(new_agent)
-	redo
 end
 end
 

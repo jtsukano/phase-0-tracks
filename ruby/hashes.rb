@@ -54,3 +54,4 @@ end
 # Print the latest hash.
 puts "Here is your final information."
 puts client_info
+
