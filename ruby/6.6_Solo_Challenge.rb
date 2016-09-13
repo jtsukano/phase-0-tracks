@@ -2,7 +2,7 @@
 
 class WordGame
 	attr_reader :is_over, :word_to_guess, :word_arr
-	attr_accessor :word, :guess
+	attr_accessor :word, :guess, :guess_count
 
 	def initialize
 		puts "Welcome to the Word Guessing Game!"
@@ -56,7 +56,8 @@ game.start_game
 puts "The word to guess is:"
 game.starting_display
 
-while !game.is_over
+
+until game.guess_count == game.word_to_guess.length
 	game.input
-	if !game.guess 
+	game.check_word
 end
