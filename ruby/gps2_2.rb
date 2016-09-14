@@ -61,7 +61,7 @@ def add_to_list(item)
 end
 
 def delete_from_list(item)
-	$list.delete[:"#{item}"]
+	$list.delete(:"#{item}")
 end
 
 shopping_list("milo cereal milk")
