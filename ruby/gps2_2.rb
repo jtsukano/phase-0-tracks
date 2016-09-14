@@ -24,7 +24,7 @@
 # output: Updated hash with the item deleted.
 
 # Method to update the quantity of an item
-# input: a string for the quantity the user wants to update
+# input: a string for the item and new quantity the user wants to update
 # steps: 
 # output:
 
@@ -41,7 +41,7 @@ def shopping_list(items)
 	$list = Hash.new
 	# enter quantity of each item.
 	items.each_index do |x|
-		puts "Enter quantity for #{items[x]}."
+		puts "Enter quantity with no spaces for #{items[x]}."
 		quantity = gets.chomp
 		# assign each quantity to the item and add to list
 		$list[:"#{items[x]}"] = quantity
@@ -64,9 +64,16 @@ def delete_from_list(item)
 	$list.delete(:"#{item}")
 end
 
+def update_quantity(change)
+	change = change.split
+	$list[:"#{change[0]}"] = change[1]
+end
+
 shopping_list("milo cereal milk")
 p $list
 add_to_list("pizza 1")
 p $list
 delete_from_list("milo")
+p $list
+update_quantity("pizza 4")
 p $list
