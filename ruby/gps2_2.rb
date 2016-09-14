@@ -24,13 +24,16 @@
 # output: Updated hash with the item deleted.
 
 # Method to update the quantity of an item
-# input: a string for the item and new quantity the user wants to update
+# input: a string for the item
 # steps: 
+	# get INPUT for new quantity from user
+	# ADD inputed string and new quantity to the list hash
 # output:
 
 # Method to print a list and make it look pretty
-# input:
-# steps:
+# input: n/a
+# steps: 
+	# ADD strings with meessages to help track changes made. 
 # output:
 def shopping_list(items)
 	# separate the items into an array
@@ -51,29 +54,51 @@ def shopping_list(items)
 end
 
 def add_to_list(item)
-	if item.split.length > 1
-		item = item.split
-		# p item[1]
-		$list[:"#{item[0]}"] = item[1]
-	else
-		$list[:"#{item}"]
-	end
+	puts "How many #{item} will you add?"
+	quantity = gets.chomp
+	$list[:"#{item}"] = quantity
+	puts "You added #{item} to your list!"
+	puts "Here is your updated shopping list:"
+	p $list
 end
 
 def delete_from_list(item)
 	$list.delete(:"#{item}")
+	puts "You removed #{item} from the list."
+	puts "Here is your updated shopping list:"
+	p $list
 end
 
 def update_quantity(change)
-	change = change.split
-	$list[:"#{change[0]}"] = change[1]
+	puts "What do you want to change the quantity for #{change} to?"
+	quantity = gets.chomp
+	$list[:"#{change}"] = quantity
+	puts "You changed the quantity of #{change} to #{quantity}."
+	puts "Here is your updated shopping list:"
+	p $list
 end
 
-shopping_list("milo cereal milk")
-p $list
-add_to_list("pizza 1")
-p $list
-delete_from_list("milo")
-p $list
-update_quantity("pizza 4")
-p $list
+shopping_list("")
+
+add_to_list("Lemonade")
+add_to_list("Tomatoes")
+add_to_list("Onions")
+add_to_list("Ice Cream")
+
+delete_from_list("Lemonade")
+
+update_quantity("Ice Cream")
+
+
+# What did you learn about pseudocode from working on this challenge?
+	# Working in this challenge helped me understand how pseudocoding allows to build the skeleton of the code you are trying to build. It definitely makes it easier to code after seeing what you need to do rather than taking time to code and lose track in the process. 
+# What are the tradeoffs of using arrays and hashes for this challenge?
+	# Arrays can be used to add a set of information into another list. Hashes allow you to set a value to the elements which allows you to see them separately rather than all at once.
+# What does a method return?
+	# A method returns the output of whatever code you had it run. 
+# What kind of things can you pass into methods as arguments?
+	# you can pass through any variable that can be called upon and used within other codes. 
+# How can you pass information between methods?
+	# you can pass information between methods by adding '$' to the values you want to use.
+# What concepts were solidified in this challenge, and what concepts are still confusing?
+	# Using values within methods and passing it along to other methods or outside code in general is solidified. The use of hashes and arrays is a bit confusing still since I had to work on this by myself. The other option I had when doing this assignment was to just separate the itemm and it's quantity in an array, then place them within hashes where it linked to a key such as :item1.
