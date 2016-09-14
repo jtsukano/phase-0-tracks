@@ -60,7 +60,13 @@ def add_to_list(item)
 	end
 end
 
+def delete_from_list(item)
+	$list.delete[:"#{item}"]
+end
+
 shopping_list("milo cereal milk")
 p $list
 add_to_list("pizza 1")
+p $list
+delete_from_list("milo")
 p $list
