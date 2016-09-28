@@ -1,0 +1,89 @@
+Release 2
+1. 
+    sqlite> select * from mtg
+       ...> ;
+    1|Adverse Conditions|4|Devoid|1
+    2|Akoum Firebird|4|Red|1
+    3|Akoum Hellkite|6|Red|1
+    4|Akoum Stonewaker|2|Red|1
+    5|Acid-Spewer Dragon|6|Black|2
+    6|Aerie Bowmasters|4|Green|2
+    7|Ainok Artillerist|3|Green|2
+    8|Ainok Survivalist|2|Green|2
+    9|Abandon Reason|3|Red|3
+    10|Abundant Maw|8|Black|3
+    11|Advanced Stichwing|5|Blue|3
+    12|Alchemist's Greeting|5|Red|3
+
+2.
+    sqlite> UPDATE mtg SET color="Colorless" WHERE name="Adverse Conditions";
+
+3.
+    sqlite> SELECT * FROM mtg, sets WHERE mtg.set_id = sets.id;
+    1|Adverse Conditions|4|Colorless|1|1|Battle for Zendikar
+    2|Akoum Firebird|4|Red|1|1|Battle for Zendikar
+    3|Akoum Hellkite|6|Red|1|1|Battle for Zendikar
+    4|Akoum Stonewaker|2|Red|1|1|Battle for Zendikar
+    5|Acid-Spewer Dragon|6|Black|2|2|Dragons of Tarkir
+    6|Aerie Bowmasters|4|Green|2|2|Dragons of Tarkir
+    7|Ainok Artillerist|3|Green|2|2|Dragons of Tarkir
+    8|Ainok Survivalist|2|Green|2|2|Dragons of Tarkir
+    9|Abandon Reason|3|Red|3|3|Eldritch Moon
+    10|Abundant Maw|8|Black|3|3|Eldritch Moon
+    11|Advanced Stichwing|5|Blue|3|3|Eldritch Moon
+    12|Alchemist's Greeting|5|Red|3|3|Eldritch Moon
+
+4.
+    sqlite> SELECT mtg.name, sets.name FROM mtg JOIN sets ON mtg.set_id = sets.id
+   ...> ;
+    Adverse Conditions|Battle for Zendikar
+    Akoum Firebird|Battle for Zendikar
+    Akoum Hellkite|Battle for Zendikar
+    Akoum Stonewaker|Battle for Zendikar
+    Acid-Spewer Dragon|Dragons of Tarkir
+    Aerie Bowmasters|Dragons of Tarkir
+    Ainok Artillerist|Dragons of Tarkir
+    Ainok Survivalist|Dragons of Tarkir
+    Abandon Reason|Eldritch Moon
+    Abundant Maw|Eldritch Moon
+    Advanced Stichwing|Eldritch Moon
+    Alchemist's Greeting|Eldritch Moon
+
+5.
+    sqlite> DELETE FROM mtg WHERE name="Akoum Firebird";
+
+release 3
+    sqlite> SELECT set_id, color, mtg.name FROM sets CROSS JOIN mtg;
+    1|Colorless|Adverse Conditions
+    1|Red|Akoum Hellkite
+    1|Red|Akoum Stonewaker
+    2|Black|Acid-Spewer Dragon
+    2|Green|Aerie Bowmasters
+    2|Green|Ainok Artillerist
+    2|Green|Ainok Survivalist
+    3|Red|Abandon Reason
+    3|Black|Abundant Maw
+    3|Blue|Advanced Stichwing
+    3|Red|Alchemist's Greeting
+    1|Colorless|Adverse Conditions
+    1|Red|Akoum Hellkite
+    1|Red|Akoum Stonewaker
+    2|Black|Acid-Spewer Dragon
+    2|Green|Aerie Bowmasters
+    2|Green|Ainok Artillerist
+    2|Green|Ainok Survivalist
+    3|Red|Abandon Reason
+    3|Black|Abundant Maw
+    3|Blue|Advanced Stichwing
+    3|Red|Alchemist's Greeting
+    1|Colorless|Adverse Conditions
+    1|Red|Akoum Hellkite
+    1|Red|Akoum Stonewaker
+    2|Black|Acid-Spewer Dragon
+    2|Green|Aerie Bowmasters
+    2|Green|Ainok Artillerist
+    2|Green|Ainok Survivalist
+    3|Red|Abandon Reason
+    3|Black|Abundant Maw
+    3|Blue|Advanced Stichwing
+    3|Red|Alchemist's Greeting
