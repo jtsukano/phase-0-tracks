@@ -22,6 +22,13 @@ end
 post '/students' do
   db.execute("INSERT INTO students (name, campus, age) VALUES (?,?,?)", [params['name'], params['campus'], params['age'].to_i])
   redirect '/'
+
 end
 
 # add static resources
+
+# Have students listed by campus
+get '/students/address' do
+	@students = db.execute("SELECT * From students")
+	erb :address
+end
