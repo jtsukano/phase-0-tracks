@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Student's Addresses</title>
+</head>
+<body>
+	<form action="/campuses" method="post">
+		<input type="text" name="city" placeholder="City">
+		<input type="text" name="state" placeholder="State">
+		<button type="submit">Save</button>
+	</form>
+	<h1>Student's Addresses</h1>
+	<p>Here are the student's addresses.</p>
+	<ul>
+		<% @campuses.each do |location| %>
+		<li><%= location['city'] %>, <%= location['state'] %></li>
+		<% end %>
+	</ul>
+	  <ul>
+    <% @students.each do |student| %>
+      <li><%= student['name'] %>, <%= student['age'] %></li>
+    <% end %>
+    <li></li>
+  </ul>
+</body>
+</html>
